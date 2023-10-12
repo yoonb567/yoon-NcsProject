@@ -1,0 +1,2577 @@
+@charset "utf-8"; 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400; font-style: normal;}
+
+/* ------------------ common --------------------*/
+body, header, footer, main, nav, aside, section, article, p, address, div, h1, h2, h3, h4, h5, h6, form, fieldset, legend, table, tbody, th, td, ol, ul, li, dl, dt, dd, input, button, select, option, textarea, figure, figcaption, caption, blockquote{ margin:0; padding:0; }
+body{ background: #eee; font-family: "Nanum Gothic", 'Noto Sans KR', sans-serif; font-size: 16px; overflow-x: hidden; /* width: 100vw; */}
+ol, ul{ list-style: none;}
+img{ display: block; border: 0px; }
+a{ text-decoration: none; }
+address, em, i{ font-style:normal; }
+button, fieldset, select, input{ border: 0px; }
+legend, caption, hr{ display:none; }
+table{ border-collapse: collapse; border-spacing: 0px;}
+
+.sr-only{
+  position:absolute;  width:0; height:0; left:0;  top:0;
+  overflow: hidden;  font-size:0;  line-height:0;  visibility: hidden;
+}
+html{overflow-x: hidden}
+/* ---------- header 시작 --------- */
+header{ 
+  width: 100%; height:80px;
+  background:rgba(214, 214, 214, 0.3);  
+  position:fixed;  left:0;  top:0;  z-index:99999;   
+}
+header>.innerbox{
+  width: 100%; max-width:1140px; 
+  height: 80px; 
+  padding:0px 30px; 
+  box-sizing: border-box;
+  display:flex;  
+  justify-content: space-between;  align-items: center; 
+}
+header>.innerbox>h1{  
+  width:45px; height:45px;  
+}
+header>.innerbox>h1 img{  
+  width:100%; height:auto;  
+}
+header .innerbox .toggle{ 
+  width: 45px; height: 45px; border:0px; 
+  background-color: #FEC52C; 
+  border-radius: 50%;
+  display: flex; flex-direction: column; 
+  justify-content: center; align-items: center; gap:5px;
+  position: relative;
+  /* z-index: 10; */
+}
+header .innerbox .toggle span{ 
+  display:block; width: 22px; height: 3px; 
+  background-color: #fff;
+}
+/*++++++++ header 종료 ++++++++*/
+/*----- gnb(mobile) 시작 -----*/
+#header .innerbox #gnb{ 
+  position:absolute; 
+  width: 70vw; height: 100vh; 
+  right: -70vw; top:0; bottom: 0; 
+  background: #ececec;
+  box-sizing: border-box;
+  padding: 0px 0 20px;
+  /* z-index: 100; */
+}
+/*임시로*/
+#header .gnb_bg{
+  position: absolute;
+  width: 30vw; height: 100vh; 
+  background: rgba(0,0,0,0.5);
+  top:0; left:-30vw;
+  /* z-index: 50; */
+}
+/**/
+.innerbox #gnb .sitemap{
+  width:100%; height: 100%;
+}
+.innerbox #gnb .sitemap button{
+  width: 100%;
+  height: 80px;
+  background-color: #3a3a3a;
+  position: relative;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.innerbox #gnb .sitemap button .left{
+  position:absolute;
+  font-size:18px;
+  padding-bottom:20px;
+  top:31px; 
+  right:67px;
+}
+.innerbox #gnb .sitemap button .right{
+  font-size: 60px;
+  padding-right: 25px;  
+}
+/* ----- accordion ------ */
+.sitemap .accordion_wrap{  
+  background-color: #ececec;
+  font-size: 22px; font-weight: bold;
+} 
+.sitemap .accordion_wrap li .entry{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 35px 25px 15px;
+  border-bottom: 1px solid #cacaca;
+}
+.sitemap .accordion_wrap li .entry p{
+  line-height: 40px;
+  padding-left: 20px;
+  font-weight: bold;
+  color:#090909;
+  font-size: 22px;
+}
+.sitemap .accordion_wrap li .entry .switch{
+  background: url('../icons/plus_small.png') no-repeat center center;
+  width: 20px; height: 20px;
+  display: block;
+}
+.sitemap .accordion_wrap li .entry.on .switch{
+  background-image: url('../icons/minus.png');
+}
+.sitemap .accordion_wrap li .sub{
+    background: #dedede;
+    line-height: 2.8rem;
+    padding: 15px 0 15px 40px;
+    font-size: 18px;
+}
+.sitemap .accordion_wrap li .sub li{
+  padding: 5px 0;
+}
+.sitemap .accordion_wrap li .sub a{
+  color: #5b5b5b;
+}
+/* +++++ gnb 종료 ++++++*/
+/* ---- footer(mobile) 시작 ----*/
+.main_footer{ 
+  display: flex; 
+  flex-direction: column; justify-content: center; 
+  align-items: center;
+  width: 100%; height: 281px; 
+  background: #474747;
+  position: relative; 
+  /* margin-top: 30px; */
+}
+.main_footer .innerbox{
+  width: 90%; border:1px solid #ececec;
+  padding:25px 0 15px 0;
+}
+.main_footer address{   
+  margin-bottom:10px;
+  /* 알아서 수정 */
+}
+.main_footer p:first-of-type{
+  font-size: 14px; font-weight: normal;
+  color:#ececec; text-align: center;
+  letter-spacing: 0.5px;
+  /* padding-top: 25px; */
+  line-height: 20px;  
+}
+.main_footer p:first-of-type span{
+  font-size: 22px; 
+  font-weight: bold; color:#ececec;
+}
+.main_footer address p:first-of-type{
+  font-size: 14px; font-weight: normal; 
+  color:#ececec; text-align: center;
+  padding-top: 14px;
+  line-height: 20px;
+}
+.main_footer address p:last-child{
+  font-size: 11px; font-weight: normal; 
+  color:#d4d4d4; text-align: center;
+  letter-spacing: 0.5px;
+  padding-top: 10px;
+}
+.main_footer .sns{ 
+  margin: 20px auto 10px;
+}
+.main_footer .sns ul{
+  display: flex; justify-content: center; align-items:center; gap:10px; 
+  /* margin-top: 175px; */
+} 
+.main_footer .warning{
+  display: flex; justify-content: center; align-items: center; gap:4px;
+}
+.main_footer .warning span{
+  background: url('../icons/line_vertical.png') no-repeat center center;
+  width: 12px; height: 12px;
+}
+.main_footer .warning a{
+  font-size: 11px; font-weight: normal; color:#d4d4d4; 
+} 
+/* --// footer(mobile) end //-- */
+
+/*-------- slide 시작 -------- */
+.slide_container{  margin-top:70px;}  
+.swiper { width: 100%; height: 100%;}
+/*
+.swiper>.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*/
+.swiper img {
+  display: block;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+.slide_container>.swiper>.swiper-wrapper>.swiper-slide>h2{ 
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  position: absolute;
+  top: 40px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #979797;
+  width: 240px;
+}
+.slide_container>.swiper>.swiper-wrapper>.swiper-slide>h2>span{
+  color:#F17C0F; 
+}
+.slide_container>.swiper>.swiper-wrapper>.swiper-slide>p{
+  font-size: 18px;
+  color: #807575;
+  display: block;
+  width: 325px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 115px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 26px;
+  letter-spacing: 0.2px;
+}
+/*---// slide 종료 //------ */
+
+/* ------ main_nav 시작 ---- */
+.main_nav>.motto{
+  display:flex;  flex-direction:column;
+  justify-content: center;
+  align-items: center;  gap:20px;
+  position: relative;
+}
+.main_nav>.motto>img{
+  width: 310px;
+  height: 70px;
+  margin-top: 30px;
+}
+.main_nav>.motto>p{ 
+  display: inline-block;
+  margin-top: 11px;
+  text-align: center;
+  font-size: 16px;
+  background: #eee;
+  position: relative;
+  z-index: 5;
+  padding: 0 14px;
+  bottom: 5px;
+} 
+.main_nav>.motto>p>span{
+  color:#F17C0F;
+}
+.main_nav>.motto>div>span{
+  display: block;
+  width:100%;
+  border: 1px solid #fff;
+  position: absolute;
+  bottom:34px;  left:0px;
+}
+
+.nav_list>ul{ 
+display: flex; flex-wrap: wrap; justify-content: space-between; gap: 36px;
+align-items: center;
+margin: 0 50px; padding: 0;
+}
+.nav_list>ul>li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav_list>ul>li img{
+  width: 80px;
+  height: 80px;
+}
+.nav_list>ul>li>span{
+  font-size: 16px; 
+  text-align: center;
+  padding-top: 10px;
+}
+/* ---------- main_nav 종료 ----------- */
+/* --------- 담임목사 인사말 시작 ------- */
+
+.greeting{
+background: url("../img/friends_m.png") no-repeat center center; 
+background-size:cover;
+width: 100%; 
+height: 420px;
+}
+.greeting>div{ 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;  
+  margin-top: 35px;
+}
+.greeting>div>p{
+  color: #FEC52C;
+  text-align: center;
+  margin-top: 44px;
+  line-height: 27px;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 27px;
+  letter-spacing: 1px;
+} 
+.greeting>div>.box{
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 13px;
+  align-items: center;
+  background: rgba(80,80,80,0.4);
+  width: 190px;
+  height: 45px;
+  border: 3px solid #fec52c;
+  margin-top: 30px;
+} 
+.greeting>div>.box>a{
+  color:#fec52c;
+  font-size: 20px;
+}
+.greeting>div>.box>img{
+  width:15px; height: 15px;
+}
+/* ----------// 인사말 종료 //--------- */
+/* ------------- 공지 시작 ------------- */
+.notice{ 
+  width: 100%;
+  background-color: #A8968D;
+}
+.notice .ad h2{ 
+  line-height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  background: #867770;
+  width: 150px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0px auto 10px;
+  padding-top: 30px;
+}
+.notice .ad p{
+  background: url('../icons/bell.png') no-repeat left 3px center;
+  background-size: 17px;
+  display: inline-block;
+  margin: 40px 0 0px 30px;
+  font-size: 20px;
+  color: #fff;
+  padding: 10px 0 10px 35px;
+  border-bottom: 1px solid #fff;
+}
+.notice .ad p:last-child{
+  margin: 30px 0 70px 30px;
+}
+/* --------// notice end //----------- */
+
+/* -------- worship_info 시작 -------- */
+#worship_info{ 
+  background:#e7e4e3;
+  width: 100%; height:390px; overflow:hidden;   
+}
+#worship_info>h2{ 
+  width: 150px;
+  height: 80px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  background: #867770;
+  margin: 0px auto 40px;
+  letter-spacing: 2px;
+}
+#worship_info .timeTable{ 
+  width: 92%;
+}
+#worship_info .timeTable,#worship_info tr,#worship_info td{   
+  border-collapse:collapse; box-sizing: border-box;
+  border: 1px solid #433232;
+  padding-left: 20px;
+}
+#worship_info>.timeTable{
+  margin: 35px auto 20px;
+  font-size: 20px;
+  border-top: 5px solid #433232;
+  border-bottom: 3px solid #433232;
+}
+#worship_info .timeTable tr .dot{ 
+  background: url('../icons/circle-filled.png') no-repeat left 10px center;
+  background-size: 16px;
+  padding: 13px 0 13px 35px;
+  text-align: left;
+}
+#worship_info .timeTable tr td{ 
+  background-color: #efefef;
+}
+/* ----------// 예배안내 종료 //----------- */
+/* ------------- 다음세대 시작 ------------ */
+.next_gen>.bg{
+  background: url("../img/next_gen_m.jpg") no-repeat center center;
+  width: 100%; height: 400px; 
+  background-size: cover; position: relative;
+}
+.next_gen>.bg>.dark{ 
+  width: 210px;
+  height: 400px;
+  background-color: rgba(30, 29, 29, 0.5);
+  position: absolute;
+  right: 0;  
+} 
+.next_gen>div>.dark>h3{
+  font-size: 20px; color:#FEC52C;   
+  margin:50px 0 auto;
+  text-align: center;
+}
+.next_gen>div>.dark>p{
+  width: 130px;
+  height: 37px;
+  margin: 24px auto;
+  line-height: 37px;
+  padding: 0 10px;
+  border: 3px solid #fec52c;
+}
+.next_gen>div>.dark>p>a{
+  font-size: 18px;
+  color: #FEC52C;
+  background: transparent;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.next_gen>div>.dark>p>a>img{
+  width: 14px; height: 14px;
+}
+
+/* ----------// 다음세대 종료 //----------- */
+/* ------------ photo gallery 시작--------- */
+
+.gallery{position: relative; 
+  width: 100vw; height:55vh;}
+.gallery h2{
+  padding: 20px 0;
+  background-color: rgba(33, 20, 9, 0.3);
+}
+.gallery h2 img {margin: auto;}
+
+/* slick */
+/* .slick_bg {}
+.slick_bg .gallery_bg {} */
+
+.slick_bg .gallery_bg img {
+  width: 100%;
+  -webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
+  filter: blur(3px);
+}
+.slick_list {transform: translateY(-100%)}
+/* .slick_list .gallery_thumb {
+  background: #FFF;
+  border: 1px solid red;
+  margin: 20px;
+  width: calc(100vw - 200px);
+} */
+.slick-list .gallery_thumb a{
+  display: block;
+  width:66%;
+  height: 56vw;
+  background-color: #fff;
+  padding: 6px;
+  /* left: calc(50% - 100px); */
+}
+.slick-list .gallery_thumb img{
+  width:100%;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.slick-list .gallery_thumb .data{
+  position: relative;
+  width: 65%;
+  text-indent: 5px;
+  left: 10px;
+  top: -55px;
+}
+.slick-list .gallery_thumb .data strong{
+  position: absolute;
+  right: 14px;
+  bottom: -5px;
+  color: #4c4c4c;
+  font-size: 30px;
+} 
+.slick-list .gallery_thumb .data p{
+  font-size: 14px;
+  font-weight: bold;
+  color: #5d5d5d;
+  padding-top: 6px;
+} 
+.slick-list .gallery_thumb .data p:nth-of-type(2){ 
+  font-size: 12px;
+  color: #959595;
+  padding-top: 3px;
+}
+/* -------// photo gallery 종료 //-------- */
+
+/* ----------swiper pagination ---------- */
+.slide_container .swiper-pagination>span {background: red;}
+
+/*+++++++++++ sub 공통 +++++++++++++
+.sub h2 {text-align: center;font-size: 20px;}
+.sub h3 {text-align: left;}
+
+/* ---------(page1) worship_info --------- */
+
+#sub_worshipInfo{ padding: 3%;}
+#sub_worshipInfo>.intro{ 
+  background: url("../img/worshipInfo1.png") no-repeat center center;
+  background-size: cover;
+  padding-top: 68.83%;
+  display: flex; justify-content: center; align-items: center;
+  position: relative;
+}
+#sub_worshipInfo>.intro>span{
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: 3px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#sub_worshipInfo>p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto 0px;
+  text-align: center;
+  line-height: 1.6em;
+  font-size: 17px;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  box-shadow: 11px 12px 20px rgba(0,0,0,0.3);
+  height: 15vh;
+  width: 72vw;
+  background: #f8f8f8;          
+} 
+#sub_worshipInfo .sun_worship{ 
+  background: url("../img/worshipInfo2.png") no-repeat center center;
+  background-size: cover;
+  height: 308px;
+  margin: 0 auto;
+}
+#sub_worshipInfo .sun_worship>strong{ 
+  display: block;
+  font-size: 40px;
+  text-align: center;
+  line-height: 308px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 3px;
+}
+#sub_worshipInfo ul .sun_worship .time{
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  width:340px; 
+  margin:35px auto 30px; 
+  gap:25px;
+  font-size: 20px; 
+}
+#sub_worshipInfo .sun_worship .time>li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 50px;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.3); 
+}
+#sub_worshipInfo ul{
+  margin: 50px auto;
+}
+#sub_worshipInfo .wed_worship{ 
+  background: url("../img/worshipInfo3.png") no-repeat center center;
+  background-size: cover;
+  height: 308px;
+  margin-top: 200px;
+}
+#sub_worshipInfo .wed_worship>strong{ 
+  display: block;
+  font-size: 40px;
+  text-align: center;
+  line-height: 308px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 3px;
+}
+#sub_worshipInfo .wed_worship p{
+  text-align: center;
+  width: 240px; height: 50px; line-height: 50px;
+  font-size: 20px; letter-spacing: 1px; 
+  margin: 30px auto;
+  border-radius: 25px;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.3); 
+}
+#sub_worshipInfo .fri_worship{ 
+  background: url("../img/worshipInfo4.png") no-repeat center center;
+  background-size: cover;
+  height: 308px;
+  margin: 120px auto;
+}
+#sub_worshipInfo .fri_worship>strong{ 
+  display: block;
+  font-size: 40px;
+  text-align: center;
+  line-height: 308px;
+  font-weight: 700;
+  color: #3d3d3d;
+  letter-spacing: 3px;
+}
+#sub_worshipInfo .fri_worship>p{
+  text-align: center;
+  width: 240px; height: 50px; line-height: 50px;
+  font-size: 20px; letter-spacing: 1px; 
+  margin: 40px auto;
+  border-radius: 25px;
+  box-shadow:  5px 5px 24px #b3b3b3,
+              -5px -5px 24px #ffffff; 
+}
+#sub_worshipInfo .youth_worship{ 
+  background: url("../img/worshipInfo5.png") no-repeat center center;
+  background-size: cover;
+  height: 308px;
+  margin-top: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sub_worshipInfo .youth_worship>p{ 
+  text-align: center;
+  width: 240px;
+  line-height: 50px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+  top: 409px;
+  margin-top: 430px;
+}
+#sub_worshipInfo .children_worship{
+  background: url('../img/worshipInfo6.png') no-repeat center center;
+  background-size: cover;
+  height: auto; /* 125줄에서는 height auto를 주면 이미지가 사라짐? */
+  position: relative;
+  margin-top:130px;
+}
+#sub_worshipInfo .children_worship>strong{
+  display: block;
+  font-size: 48px;
+  text-align: center;
+  line-height: 308px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #2d2a2a;
+  margin-bottom: 110px;
+}
+#sub_worshipInfo .children_worship>strong>span{
+  -webkit-text-stroke: 1px #3d3d3d;
+}
+#sub_worshipInfo .children_worship>p{ 
+  text-align: center;
+  width: 240px; height: 50px; line-height: 50px;
+  font-size: 20px; letter-spacing: 1px; 
+  border-radius: 25px;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+  position: absolute;
+  top: 340px;
+  left:50%; transform:translateX(-50%)
+}
+/* +++++++ (page1) worship_info 끝 +++++++++ */
+
+/* --------- news page 시작------------ */
+#news{ padding: 3%; position: relative; margin-bottom:20px;}
+#news h2{ 
+  background: url('../img/children_singing.jpg') no-repeat center center;
+  background-size: contain;  
+  padding-top:66.667%;
+  height:0; overflow:hidden;
+  position: relative;
+}
+#news h2>span{ 
+  font-size: 40px; color:#8599b1; 
+  position: absolute; 
+  top:50%; transform: translate(-50%, -50%);
+  left:50%;
+  -webkit-text-stroke: 1px #fff; 
+}
+#news>form{ 
+  width: 100%; padding-top: 40px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+#news>form>#select{ 
+  width:70px; height: 30px;
+  padding-left: 7px;
+  letter-spacing: 1px;
+}
+#news>form>#searchbox{ 
+  width:170px; height: 30px;
+  padding-left: 7px;
+  letter-spacing: 1px;
+  margin-left: 7px;
+}
+#news>form>button{ 
+  width:70px; height: 30px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-left: 7px;
+  background-color: #aeaeae;
+}
+#news>ul>li{
+  border-top:1px solid #777; 
+}
+#news>ul>.top{
+  margin-top:20px
+}
+#news>ul>li>a{
+  padding: 10px 0 20px 3px;
+}
+#news>ul>li>a:first-child{
+  float: left;  
+}
+#news>ul>li>a:nth-child(2){
+  position: relative;
+  float:right;
+}
+#news>ul>li>a>img{
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  object-fit: cover;
+  width: 46px;
+}
+#news>ul>li>p{
+  clear:both;
+  font-size: 14px;
+  color:#8f8f8f;
+  padding-bottom: 7px;
+}
+#news>ul>.sec{
+  border-top: 1px solid #777;
+}
+#news>ul>.end{
+  border-bottom: 1px solid #777;
+}
+
+/* ---------- offering ----------- */
+
+#offering{ padding: 3%; position: relative;}
+#offering h2{ 
+  background: url('../img/offering.jpg') no-repeat center center;
+  background-size: contain;  
+  padding-top:56.25%;
+  height:0; overflow:hidden;
+  position: relative;
+}
+#offering h2>span{ 
+  font-size: 50px; color:#8599b1; 
+  position: absolute; 
+  top:50%; transform: translate(-50%, -50%);
+  left:50%;
+  -webkit-text-stroke: 1px #fff; 
+}
+#offering .guide{
+  width: 100%; 
+  background-color: #d9d9d9;
+  margin-top: 12px;
+}
+#offering .guide>img{
+  margin: auto;
+  width: 40%;
+  padding: 25px;
+}
+#offering .guide>p{
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.6em;
+  padding-bottom: 25px;
+}
+#offering .bankaccount{
+  display: flex; flex-direction: column; 
+  justify-content: space-around; align-items: center;
+  margin-top: 12px;
+  border: 2px solid #acacac;
+  background-color: #fff;
+} 
+#offering .bankaccount>p{
+  padding: 10px 20px;
+}
+#offering .bankaccount>p:nth-child(1){
+  margin-top: 10px;
+  font-size: 18px;
+}
+#offering .bankaccount>p:nth-child(3){
+  color:#fff;
+  text-align: center;
+}
+#offering .bankaccount span{
+  display: inline-block;
+  width: 180px; height: 25px;
+  background-color: #000;
+}
+#offering .bankaccount>p:nth-child(4){
+  position: inherit;
+  top:-10px;
+  margin-bottom: 5px;
+}
+#offering .offering_info{
+  height: 35%;
+  margin-top: 12px;
+  background: #d9d9d9;
+}
+#offering .offering_info>p{
+  text-align: center;
+  padding-top: 30px;
+  letter-spacing: 1px;
+}
+#offering .offering_info>ul{
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+#offering .offering_info>ul>li .odd{ 
+  display: inline-block;
+  width: 90px; height: 20px; 
+  background-color: #e02c2c;
+  padding: 5px; margin: 7px;
+  text-align: center;
+  line-height: 20px;
+  color:#fff;
+  font-size: 14px;
+}
+#offering .offering_info>ul>li .even{ 
+  display: inline-block;
+  width: 80px; height: 20px; 
+  background-color: #919191;
+  padding: 5px; margin: 7px;
+  text-align: center;
+  line-height: 20px;
+  color:#fff;         
+  font-size: 14px;
+}
+#offering .offering_info>ul>li:first-child{
+  margin-top: 20px;
+}
+#offering .offering_info>ul>li:last-child{
+  margin-bottom: 30px;
+}
+
+/* ---------- pastor -------------- */
+
+#pastor{ padding: 3%;} 
+#pastor h2{ 
+  background:url("../img/pastor.bg.png") no-repeat center center; 
+  padding-top: 30%;
+  background-size: 100%;  
+  height:0; overflow:hidden;
+  position: relative;
+  margin-top: 57px;
+}
+#pastor h2>span{ 
+  display: block;
+  width: 100vw;
+  height: 60px;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  color: #555;
+  line-height: 32px;
+}
+#pastor section img{
+  margin-top: 10px;
+  width: 100%;
+}
+#pastor>section>p{
+color:#000;
+letter-spacing: 0.3px;
+line-height: 1.8em;
+padding: 20px 15px;
+}
+#pastor>section>p>.a{
+font-weight: bold;
+font-size: 18px;
+}
+#pastor>section>p>.b{
+font-weight: bold;
+color:#626262;
+}
+#pastor section p span .c{ text-align: right;}
+
+/* --------- youth --------------- */
+
+#youth{ padding: 3%;}
+#youth>div{ 
+  background: url('../img/dew.jpeg') no-repeat center center;
+  background-size: contain;  
+  padding-top: 57.43%;
+  position: relative; 
+  margin-top: 40px;      
+}
+#youth>div>h2{
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  text-align: center;
+  color: #319635;
+  -webkit-text-stroke: 1px #eaffe5;
+  font-size: 40px;
+  font-weight: bold;
+}
+#youth>div>p{
+  width: 100%;
+  font-size: 12px;
+  position: absolute;
+  top: 65%;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+#youth .info{
+  width: 100%;
+  background-color: #e5e5e5;
+}
+#youth>.info>h3{
+  width: 100px; height: 50px;
+  border-radius: 0 0 50px 50px;
+  background-color:#80b64a;
+  text-align: center;
+  margin: auto;
+  color:#ffffff;
+  padding-top: 20px;
+  line-height: 10px;
+}  
+#youth>.info>p{
+  font-size: 18px;
+  text-align: center;
+  padding: 30px 0 45px 0;
+  letter-spacing: 1px;
+}
+#youth>.guardian{
+  width: 100%;
+  background-color: #ffffff;
+}
+#youth>.guardian>h3{
+  width: 100px; height: 50px;
+  border-radius: 0 0 50px 50px;
+  background-color:#80b64a;
+  text-align: center;
+  margin: auto;
+  color:#ffffff;
+  padding-top: 20px;
+  line-height: 10px;    
+} 
+#youth>.guardian>div{
+  display: flex; justify-content: space-evenly; align-items: center;
+  position: relative;
+  padding: 0 0 15px 0;
+}
+#youth>.guardian>div>p{
+  width: 110px; height: 60px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 60px;
+  margin: 20px 0 70px 0;
+  border-radius: 15%;
+  box-shadow:  5px 5px 24px #b3b3b3,
+          -5px -5px 24px #ffffff; 
+}
+#youth>.guardian>div>span{
+  border-left: 1px solid #aeaeae;
+  width: 1px;
+  height: 100px;
+  position: absolute;
+  bottom: 38px;
+}
+#youth>.gallery{
+  width: 100%;
+}      
+#youth>.gallery>h3{
+  background: url('../img/youth_gallery1.png') no-repeat center center;
+  text-indent: -9999px;
+  padding-top: 19.76%;
+  height: 0; overflow:hidden;
+  position: relative;
+}
+#youth>.gallery>.container{
+  width: 100%; 
+  display: grid;
+  grid-template-columns:repeat(2, 1fr); 
+  grid-template-rows:repeat(2, 1fr); 
+  margin-top: 20px;
+}  
+#youth>.gallery>.container>figure{
+  width: 90%;
+  margin: auto;
+}
+#youth>.gallery>.container>figure>a{
+  display: block;
+  padding-top: 67%;
+  overflow: hidden;
+  position: relative;
+}
+  #youth>.gallery>.container>figure>a>img{
+  display:block;
+  position: absolute; left: 0; top: 0;
+  border: 0px;
+  width: 100%;
+  }
+#youth>.gallery>.container>.one{
+  grid-column: 1/span 1; grid-row:1/span 1;
+}
+#youth>.gallery>.container>.two{
+  grid-column:2/3; grid-row:1/2;
+}
+#youth>.gallery>.container>.three{
+  grid-column:1/2; grid-row:2/3;
+}
+#youth>.gallery>.container>.four{     
+  grid-column: 2/span 1; grid-row: 2/span 1;
+}
+#youth>.gallery>.container>figure>figcaption{
+  text-align: center;
+  font-size: 13px; 
+  line-height: 30px; 
+  color:#5d5d5d;
+}
+/* -----------// youth end //---------- */
+/* -----------// churchIntroduction start //---------- */
+#introduction p{
+  font-size: 30px;
+  padding: 90px 0;
+  text-align: center;
+}
+/* ----------- churchIntroduction end ---------- */
+/* ----------- servants start ---------- */
+#servants{ background-color: #f6eada;}
+#servants .bg{ 
+  background: url('../img/shepard2.png') no-repeat center;
+  background-size: contain;  
+  padding-top:83.98%;
+  height:0; overflow:hidden;
+  position: relative;
+  display: flex; flex-direction:column; justify-content: start;
+  position: relative;
+}
+#servants .bg .motto{ 
+  position: absolute;
+  width: 85%;
+  top:120px; 
+  left: 30px;
+  color: #433232;
+}
+#servants .bg h1{ 
+  position: absolute;
+  width: 85%;
+  top:168px; 
+  left: 30px;
+  color: #433232;
+  font-size: 19px;
+  line-height: 30px;
+  }
+  #servants h2{
+    position: relative;
+    top: -70px;
+    text-align: center;
+    font-size: 34px;
+    color: #433232;
+  }
+  #servants .servant .top{
+    display: flex; justify-content: start;
+    align-items: center;
+  }
+  #servants .servant .top .title{
+    display: block;
+    padding: 0 10px 5px 40px;
+    font-size: 24px;
+    color: #433232;
+    font-weight: bold;
+  }
+  #servants .servant .top .line{
+    display: block;
+    width: 50%;
+    border: 1px solid #d4d4d4;
+  }
+  #servants .servant .bot{
+    position: relative;
+  }
+  #servants .servant .bot img{ 
+    width: 70%;
+    box-shadow: 16px 16px 22px rgba(0,0,0,0.3);
+    margin: 30px auto 70px auto;
+  }
+  #servants .servant .bot p{
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 70px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+/* --------// servants end //-------- */
+/* ------------ map start ---------- */
+#mapping{ padding: 25% 3% 5%; 
+  background-color: #f7f5e8;}
+#mapping .top{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#mapping div h1{  
+  float: left;
+  background: url('../icons/logo_m.png') no-repeat center;
+  width: 100px;
+  background-size: contain;
+  text-indent: -9999px;
+  padding-right: 30px;
+}
+#mapping div p{
+  float: left;
+  font-size: 32px;
+  color: #643434;
+  text-align: center;
+  font-weight: 900;
+  padding: 0 20px 0 7px;  
+}
+/* #mapping div img{
+  width: 30px;
+  height: 30px;
+} */
+#mapping .api #map{
+  width: 90%;
+  height: 256px;
+  border: 1px solid #5d5d5d;
+  margin: 30px auto 20px auto;
+}
+#mapping .address{ 
+  width: 90%; height: auto;
+  background-color: #dcd9ac;
+  border: 1px solid #919172;
+  margin: 10px auto;
+}
+#mapping .address p{
+  padding: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+#mapping .address .sec{
+  padding-left: 30px;
+}
+#mapping .address .adr::before{
+  content:"";
+  background: url('../icons/location.png') no-repeat center center;
+  background-size: contain;
+  display: inline-block;
+  width: 20px; height: 20px;
+  margin-right:10px;
+}
+#mapping .address .tel::before{
+  content: "";
+  background:url('../icons/tel.png') no-repeat center center;
+  background-size:contain;
+  display: inline-block;
+  width: 20px; height: 20px;
+  margin-right:10px;
+}
+#mapping .address .metro::before{
+  content: "";
+  background:url('../icons/bus.png') no-repeat center center;
+  background-size:contain;
+  display: inline-block;
+  width: 20px; height: 20px;
+  margin-right:10px;
+}
+#mapping .address .bus{
+  font-size: 14px; 
+  padding: 7px 10px;
+  line-height: 22px;
+}
+#mapping .address .bus span{font-weight: bold;}
+#mapping .address p:last-child{
+  background-color: #f7f5e8;
+}
+/* -----------// map end //---------- */
+/* ------- sundayschool start -------- */
+
+#sunschool{ background-color: #F8F5E3;}
+#sunschool h1{
+  padding-top: 72%;
+  background: url('../img/sunschool.png') no-repeat center center;
+  background-size: cover;
+}
+#sunschool .guide{
+  position: relative;
+} 
+#sunschool .guide h2{
+  display: block;
+  border: 0px;
+  margin: 70px 0 20px 40px;
+}
+#sunschool .guide span img{ 
+  display: block;  
+  position: absolute;
+  top: -40px; right: 0px;
+  z-index:1;
+}
+#sunschool .guide article{
+  margin-top: 50px;
+  display: flex; justify-content: space-evenly; align-items: center;  
+}
+#sunschool .guide .box_left{
+  width: 45vw;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px 0 5px;
+}
+#sunschool .guide .box_left p{
+  /* border-bottom: 1px solid #dddddd; */
+  padding-top: 23px;
+  color:#7A6E6E; font-weight: bold; font-size: 20px;
+  flex-grow:1;
+}
+#sunschool .guide .box_left .underline{
+  display: block;
+  border: 1px solid #cdbdbd;
+  width: 90%;
+  margin: 0 auto;
+}
+#sunschool .guide .box_left p .line{
+  display: inline-block;
+  color:#c4bdbd; 
+  padding:0 5px;
+  font-size: 20px;
+}
+#sunschool .guide .box_left p:nth-child(1)::before{
+  content: "";
+  background: url('../img/love_pink.png') no-repeat center center;
+  background-size: contain;
+  width: 18px; height: 19px;
+  display: inline-block;
+  padding: 0 20px 0 0;
+}
+#sunschool .guide .box_left p:nth-of-type(2)::before{
+  content: "";
+  background: url('../img/love_orange.png') no-repeat center center;
+  background-size: contain;
+  width: 18px; height: 19px;
+  display: inline-block;
+  padding: 0 20px 0 0;
+}
+#sunschool .guide .box_left p:nth-of-type(3)::before{
+  content: "";
+  background: url('../img/love_cobaltblue.png') no-repeat center center;
+  background-size: contain;
+  width: 18px; height: 19px;
+  display: inline-block;
+  padding: 0 20px 0 0;
+}
+#sunschool .guide .box_left p:nth-child(3){
+  border-bottom:none;
+}
+#sunschool .guide .box_right{
+  width: 40vw;
+  height: 200px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 15px;
+}
+#sunschool .guide .box_right p{
+  font-size: 18px; font-weight: bold; 
+  color:#643434;
+}
+#sunschool .guide .box_right p:first-child{
+  padding-top: 25px;
+}
+#sunschool .guide .box_right span{
+  display: block;
+  width: 80%;
+  border: 1px solid #c7bebe;
+}
+#sunschool h3{
+  font-size: 26px;
+  color: #643434;
+  text-align: center;
+  margin-top: 55px;
+  font-weight: 900;
+}
+#sunschool h3::before{
+  content: "";
+  background: url('../img/love_gold.png') no-repeat center center;
+  background-size: contain;
+  width: 24px; height: 25px;
+  display: inline-block;
+  padding-right: 20px;
+}
+#sunschool .table table{
+  border-collapse: collapse; 
+  border-spacing: 0px;
+  border-style: solid; 
+  border-color: #5d5d5d; 
+  border-width: 2px;
+  border-top: 3px solid #918129;
+  border-bottom: 2px solid #918129;
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 18px;
+}
+#sunschool .table table td{
+  border: 1px solid #918129;
+  padding: 15px 15px;
+  line-height: 25px;
+}
+#sunschool .table table th{
+  border: 1px solid #918129;
+  padding: 15px 15px;
+  width: 25%;
+  background-color: #f4ecc4;
+}
+#sunschool .borderline{ 
+  display: block;
+  border: 1px solid #d3d2d2;
+  width: 85%;
+  text-indent: -9999px;
+  text-align: center;
+  margin: 60px auto 0px auto;
+}
+#sunschool .album p{
+  font-size: 28px;
+  color: #643434;
+  text-align: center;
+  margin: 40px 0 5px 0;
+  font-weight: 900;
+}
+#sunschool .album a{
+  background: url('../img/frame2.png') no-repeat center center;
+  background-size: contain;
+  display: block;
+  width: 92%;
+  padding-top: 76%;
+  margin: 0 auto;
+  text-indent: -9999px;
+  position: relative;
+}
+#sunschool .album a img{
+  position: absolute;
+  top: 46px;
+  left: 30px;
+  width: 334px;
+}
+/* -----------// sunschool end //---------- */
+/* ------------ middlehigt start ---------- */
+#middlehigh{ background-color: #EBF3E1;}
+#middlehigh h1{
+  padding-top: 69.28%;
+  background: url('../img/psalm110.png') no-repeat center center;
+  background-size: cover;
+}
+#middlehigh .guide{
+  position: relative;
+} 
+#middlehigh .guide h2{
+  display: block;
+  border: 0px;
+  margin: 70px 0 20px 40px;
+}
+#middlehigh .guide span img{ 
+  display: block;
+  position: absolute;
+  top: -26px;
+  right: 10px;
+}
+#middlehigh .guide article{
+  margin-top: 50px;
+  display: flex; justify-content: space-evenly; align-items: center;  
+}
+#middlehigh .guide .box_left{
+  width: 45vw;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px 0 5px;
+}
+#middlehigh .guide .box_left p{
+    padding-top: 23px;
+    color: #2d7335;
+    font-weight: bold;
+    font-size: 18px;
+    flex-grow: 1;
+}
+#middlehigh .guide .box_left .underline{
+  display: block;
+  border: 1px solid #cbcbcb;
+  width: 90%;
+  margin: 0 auto;
+}
+#middlehigh .guide .box_left p .line{
+  display: inline-block;
+  color:#c4bdbd; 
+  padding:0 5px;
+  font-size: 20px;
+}
+#middlehigh .guide .box_left p:nth-of-type(1)::before{
+  content: "";
+  background: url('../icons/Rectangle_pink.png') no-repeat center center;
+  background-size: contain;
+  width: 16px; height: 16px;
+  display: inline-block;
+  padding: 0 20px 0 0;
+}
+#middlehigh .guide .box_left p:nth-of-type(2)::before{
+  content: "";
+  background: url('../icons/Rectangle_gold.png') no-repeat center center;
+  background-size: contain;
+  width: 16px; height: 16px;
+  display: inline-block;
+  padding: 0 20px 0 0;
+}
+#middlehigh .guide .box_left p:nth-of-type(3)::before{
+  content: "";
+  background: url('../icons/Rectangle_blue.png') no-repeat center center;
+  background-size: contain;
+  width: 18px; height: 16px;
+  display: inline-block;
+  padding: 0 20px 0 0;
+}
+#middlehigh .guide .box_left p:nth-child(3){
+  border-bottom:none;
+}
+#middlehigh .guide .box_right{
+  width: 43vw;
+  height: 200px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 15px;
+}
+#middlehigh .guide .box_right p{
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d7335;
+}
+#middlehigh .guide .box_right p:last-child{
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d7335;
+}
+#middlehigh .guide .box_right p:first-child{
+  padding-top: 25px;
+}
+#middlehigh .guide .box_right span{
+  display: block;
+  width: 80%;
+  border: 1px solid #c7bebe;
+}
+#middlehigh h3{
+  font-size: 28px;
+  color: #2d7335;
+  text-align: center;
+  margin-top: 55px;
+  font-weight: 900;
+}
+#middlehigh h3::before{
+  content: "";
+  background: url('../icons/Rectangle_green.png') no-repeat center center;
+  background-size: contain;
+  width: 16px; height: 16px;
+  display: inline-block;
+  padding-right: 25px;
+}
+#middlehigh h3::after{
+  content: "";
+  background: url('../icons/Rectangle_green.png') no-repeat center center;
+  background-size: contain;
+  width: 16px; height: 16px;
+  display: inline-block;
+  padding-left: 25px;
+}
+#middlehigh .table table{
+  border-collapse: collapse; 
+  border-spacing: 0px;
+  border-style: solid; 
+  border-color: #113900; 
+  border-width: 2px;
+  border-top: 3px solid #113900;
+  border-bottom: 2px solid #113900;
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 18px;
+}
+#middlehigh .table table td{
+  border: 1px solid #113900;
+  padding: 15px 15px;
+  line-height: 45px;
+}
+#middlehigh .table table th{
+  border: 1px solid #113900;
+  padding: 15px 15px;
+  width: 25%;
+  background-color: #e2ede0;
+}
+#middlehigh .borderline{ 
+  display: block;
+  border: 1px solid #d3d2d2;
+  width: 85%;
+  text-indent: -9999px;
+  text-align: center;
+  margin: 60px auto 0px auto;
+}
+#middlehigh .album p{
+  font-size: 28px;
+  color: #2d7335;
+  text-align: center;
+  margin: 40px 0 5px 0;
+  font-weight: 900;
+}
+#middlehigh .album a{
+  background: url('../img/frame2.png') no-repeat center center;
+  background-size: contain;
+  display: block;
+  width: 92%;
+  padding-top: 76%;
+  margin: 0 auto;
+  text-indent: -9999px;
+  position: relative;
+}
+#middlehigh .album a img{
+  position: absolute;
+  top: 46px;
+  left: 30px;
+  width: 85%;
+}
+/* ---// middlehigh end //------ */
+/* -------- activities start ------ */
+#activities{ 
+  padding: 3%; 
+  background-color: #f0f0f0;
+}
+#activities h2{
+  background: url('../img/community2.jpg') no-repeat center center;
+  background-size: contain;
+  padding-top: 70%;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+}
+#activities h2 span{
+  font-size: 6.5vw;
+  position: absolute;
+  top: 45%;
+  left: 7%;
+  color: #5d5d5d;
+  font-weight: 800;
+}
+#activities .verse{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; align-items: center;
+}
+#activities .verse p:first-child{
+  font-size: 18px;
+  color: #3d3d3d;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+  line-height: 26px;
+  font-weight: 700;
+}
+#activities .verse p:last-child{
+  font-size: 16px;
+  color: #3d3d3d;
+  padding: 5px;
+  border-top: 1px solid #c1c1c1;
+}
+#activities section{
+  display: grid;
+  grid-template-rows: repeat(3,1fr);
+  grid-template-columns: repeat(2,1fr);
+  padding: 20px 10px 30px;
+}
+#activities section article{
+  margin: 20px auto;
+  position: relative;
+  width: 50%;
+  padding: 20px 20px 30px 20px;
+  box-shadow: 16px 16px 20px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+#activities section article a{
+  display: block;
+  width: 100%; height: 100%;
+}
+#activities section article img{
+  width: 60%;
+  margin: 0 auto;
+}
+#activities section .dance>a>img{
+  width: 70%;
+}
+#activities section .dance>span{
+    transform: translateY(-8px);
+}
+#activities section .choir3>span{
+  transform: translateY(-40%);
+}
+#activities section article span{
+  display: block;
+  text-align: center;
+  transform: translateY(-40%);
+  font-size: 18px;
+}
+/* ----- activities end ----- */
+
+/* -------- contents start ------ */
+#contents{ 
+  padding: 3%; 
+  background-color: #f0f0f0;
+}
+#contents h2{
+  background: url('../img/bg_image.jfif') no-repeat center center;
+  background-size: contain;
+  padding-top: 65%;
+  overflow: hidden; height: 0;
+  position: relative;
+}
+#contents h2 span{
+  font-size: 7.9vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #cccccc;
+  font-weight: 800;
+}
+#contents .verse{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; align-items: center;
+}
+#contents .verse p:first-child{
+  font-size: 18px;
+  color: #3d3d3d;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+  line-height: 26px;
+  font-weight: 700;
+  padding-top: 30px;
+}
+#contents .verse p:last-child{
+  font-size: 16px;
+  color: #3d3d3d;
+  padding: 5px;
+  border-top: 1px solid #c1c1c1;
+}
+#contents section{
+  display: grid;
+  grid-template-rows: repeat(3,1fr);
+  grid-template-columns: repeat(2,1fr);
+  padding: 20px 10px 30px;
+}
+#contents section article{
+  margin: 20px auto;
+  position: relative;
+  width: 50%;
+  padding: 20px 20px 30px 20px;
+  box-shadow: 16px 16px 20px rgba(0,0,0,0.3);
+  background: #f9f9f9;
+  height: 11vh;
+}
+#contents section article .frame{
+  width: 27vw;
+  height: 11vh;
+  background-color: #d5d5d5;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+#contents section article a{
+  display: flex;
+  align-items: center;
+  width: 100%; height: 100%;
+}
+#contents section article img{
+  width: 50%; height:50%;
+  margin: 0 auto;
+}
+
+#contents section article span{
+  display: block;
+  text-align: center;
+  transform: translateY(387%);
+  font-size: 18px;
+  color: #856700;
+}
+/* ----- contents end ----- */
+
+/* ----- worship team start ----- */
+#worship_team{ 
+  padding: 3%; 
+  background-color: #F6FFFE;
+  position: relative;
+}
+#worship_team h2{
+  font-size: 30px;
+  color: #4c4c4c;
+  text-align: center;
+  padding: 70px 0 30px;
+  letter-spacing: 0.7px;
+}
+#worship_team .teamBg{
+  background: url('../img/choir_m.jpg') no-repeat center center; 
+  background-size: cover;
+  padding-top: 65%;
+  text-indent: -9999px;
+}
+#worship_team .verse{
+  margin-right: 3%;
+  width: 62%;
+  background-color: #D3F5FF;
+  border-radius: 0 0 0px 50px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+#worship_team .verse p{
+  font-size: 16px;
+  color: #4d4d4d;
+  text-align: center;
+  padding: 20px 11px 8px;
+  line-height: 22px;
+}
+#worship_team .verse p:last-child{
+  padding-top: 5px;
+}
+#worship_team .verse span{
+  display: block;
+  border: 1px solid #90d0eb;
+  width: 110px;
+  margin: 0 auto;
+}
+#worship_team .guide{
+  width: 45%;
+  height: 90px;
+  background-color: #99DAFF;
+  border-radius: 0 50px 50px 0px;
+  margin-top: 70px; 
+  position: relative; 
+}
+#worship_team .guide span{
+  display: block;
+  height: 15px;
+  border: 4px solid #ff4c4c;
+  position: absolute;
+  top: 46px;
+  left: 15px;
+}
+#worship_team .guide p{
+  font-size: 22px;
+  color: #fff;
+  padding: 45px 0 0 30px;
+}
+#worship_team table{
+  width: 100%; margin: 30px 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #474747;
+}
+#worship_team table tr{
+  line-height: 35px;
+}
+#worship_team table th{
+  background-color: #D3F5FF;
+  font-weight: 400;
+}
+#worship_team table tr .name{
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+}
+/* #worship_team table tr:first-child{
+  background-color: #D3F5FF
+} */
+#worship_team table th{
+  background-color: #40c7ff; 
+  color: #fff;padding: 0 0.8em;
+}
+#worship_team table {border-top: 1px solid #aaa;border-bottom: 2px solid #CCC;}
+#worship_team table td {text-indent: 0.8em;}
+#worship_team table tr {border-bottom: 1px solid #ccc;}
+#worship_team table tr:last-child {border: none;}
+
+/* -----// worship team end //----- */
+/* ----- shekinah start ----- */
+
+#shekinah{ padding: 3%; background-color: #FFF8ED;
+  position: relative;
+}
+#shekinah h2{
+  font-size: 30px;
+  color: #4c4c4c;
+  text-align: center;
+  padding: 70px 0 30px;
+  letter-spacing: 0.7px;
+}
+#shekinah .photo{
+  background: url('../img/shekinah.jpg') no-repeat center center; 
+  background-size: cover;
+  padding-top: 65%;
+  text-indent: -9999px;
+}
+#shekinah .verse{
+  margin-right: 3%;
+  width: 62%;
+  background-color: #FFF1Ce;
+  border-radius: 0 0 0px 50px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+#shekinah .verse p{
+  font-size: 16px;
+  color: #4d4d4d;
+  text-align: center;
+  padding: 20px 11px 8px;
+  line-height: 22px;
+}
+#shekinah .verse p:last-child{
+  padding-top: 10px;
+}
+#shekinah .verse span{
+  display: block;
+  border: 1px solid #B7A08B;
+  width: 110px;
+  margin: 0 auto;
+}
+#shekinah .guide{
+  width: 70%;
+  height: 90px;
+  background-color: #B7A08B;
+  border-radius: 0 50px 50px 0px;
+  margin-top: 77px;
+  position: relative;
+}
+#shekinah .guide span{
+  display: block;
+  height: 15px;
+  border: 4px solid #683f28;
+  position: absolute;
+  top: 52px;
+  left: 15px;
+}
+#shekinah .guide p{
+  font-size: 22px;
+  color: #fff;
+  padding: 50px 0 0 32px;
+}
+#shekinah .description{
+  width: 90%;
+  padding: 20px 0 0 20px;
+  font-size: 15px;
+  color: #3d2212;
+  line-height: 1.4em;
+  font-family: Pretendard-Regular;
+}
+#shekinah table{
+  width: 100%;
+  margin: 25px 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #474747;
+}
+#shekinah table tr{
+  line-height: 35px;
+}
+#shekinah table th{
+  background-color: #FFF1CE;
+  padding: 0 0.8em;
+}
+#shekinah table tr .name{
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+}
+#shekinah table th{
+  background-color: #B7A08B; 
+  color: #fff;
+}
+#shekinah table {border-top: 1px solid #aaa;border-bottom: 2px solid #CCC;}
+#shekinah table td {text-indent: 0.8em;}
+#shekinah table tr {border-bottom: 1px solid #ccc;}
+#shekinah table tr:last-child {border: none;}
+
+/* ----- shekinah end ----- */
+/* ----- gloria start ----- */
+
+#gloria{ padding: 3%; background-color: #F6EFFF;
+  position: relative;
+}
+#gloria h2{
+  font-size: 30px;
+  color: #4c4c4c;
+  text-align: center;
+  padding: 70px 0 30px;
+  letter-spacing: 0.7px;
+}
+#gloria .photo{
+  background: url('../img/gloria.jpg') no-repeat center center; 
+  background-size: cover;
+  padding-top: 65%;
+  text-indent: -9999px;
+}
+#gloria .verse{
+  margin-right: 3%;
+  width: 66%;
+  background-color: #F4DDFF;
+  border-radius: 0 0 0px 50px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+#gloria .verse p{
+  font-size: 16px;
+  color: #4d4d4d;
+  text-align: center;
+  padding: 20px 11px 8px;
+  line-height: 22px;
+}
+#gloria .verse p:last-child{
+  padding-top: 10px;
+}
+#gloria .verse span{
+  display: block;
+  border: 1px solid #D4678E;
+  width: 110px;
+  margin: 0 auto;
+}
+#gloria .guide{
+  width: 70%;
+  height: 114px;
+  background-color: #EFB0FF;
+  border-radius: 0 50px 50px 0px;
+  margin-top: 77px;
+  position: relative;
+}
+#gloria .guide>span{
+  display: block;
+  height: 16px;
+  border: 4px solid #D4678E;
+  position: absolute;
+  top: 52px;
+  left: 14px;
+}
+#gloria .guide p{
+  font-size: 22px;
+  color: #fff;
+  padding: 50px 0 0 30px;
+}
+#gloria .guide p>span{
+  font-size: 16px;
+}
+#gloria .description{
+  width: 90%;
+  padding: 20px 0 0 20px;
+  font-size: 15px;
+  color: #520034;
+  line-height: 1.4em;
+  font-family: Pretendard-Regular;
+}
+#gloria table{
+  width: 100%; margin: 30px 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #474747;
+}
+#gloria table tr{
+  line-height: 35px;
+}
+#gloria table th{
+  background-color: #EFB0FF;
+  padding: 0 0.8em;
+  color: #fff;
+}
+#gloria table tr .name{
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+}
+/* #gloria table th{
+  background-color: #EFB0FF; 
+} */
+#gloria table {border-top: 1px solid #aaa;border-bottom: 2px solid #CCC;}
+#gloria table td {text-indent: 0.8em;}
+#gloria table tr {border-bottom: 1px solid #ccc;}
+#gloria table tr:last-child {border: none;}
+
+/* -----/ gloria end /----- */
+/* ----- glory start ----- */
+
+#glory{ padding: 3%; background-color: #FFF2EF;
+  position: relative;
+}
+#glory h2{
+  font-size: 30px;
+  color: #4c4c4c;
+  text-align: center;
+  padding: 70px 0 30px;
+  letter-spacing: 0.7px;
+}
+#glory .photo{
+  background: url('../img/youth_dance.png') no-repeat center center; 
+  background-size: cover;
+  padding-top: 65%;
+  text-indent: -9999px;
+}
+#glory .verse{
+  margin-right: 3%;
+  width: 62%;
+  background-color: #FADBD4;
+  border-radius: 0 0 0px 50px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+#glory .verse p{
+  font-size: 16px;
+  color: #350202;
+  text-align: center;
+  padding: 20px 11px 8px;
+  line-height: 22px;
+}
+#glory .verse p:last-child{
+  padding-top: 10px;
+}
+#glory .verse span{
+  display: block;
+  border: 1px solid #D4678E;
+  width: 110px;
+  margin: 0 auto;
+}
+#glory .guide{
+  width: 70%;
+  height: 114px;
+  background-color: #F4CAC1;
+  border-radius: 0 50px 50px 0px;
+  margin-top: 77px;
+  position: relative;
+}
+#glory .guide>span{
+  display: block;
+  height: 16px;
+  border: 4px solid #D4678E;
+  position: absolute;
+  top: 52px;
+  left: 14px;
+}
+#glory .guide p{
+  font-size: 22px;
+  color: #fff;
+  padding: 50px 0 0 30px;
+}
+#glory .guide p>span{
+  font-size: 16px;
+}
+#glory .description{
+  width: 90%;
+  padding: 20px 0 0 20px;
+  font-size: 15px;
+  color: #3b0404;
+  line-height: 1.4em;
+  font-family: Pretendard-Regular;
+}
+#glory table{
+  width: 100%; margin: 30px 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #474747;
+}
+#glory table tr{
+  line-height: 35px;
+}
+#glory table th{
+  background-color: #F4CAC1;
+  color: #fff;
+  padding: 0 0.8em;
+}
+#glory table tr .name{
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+}
+#glory table {border-top: 1px solid #aaa;border-bottom: 2px solid #CCC;}
+#glory table td {text-indent: 0.8em;}
+#glory table tr {border-bottom: 1px solid #ccc;}
+#glory table tr:last-child {border: none;}
+
+/* -----/ glory end /----- */
+/* ----- koinonia start ----- */
+
+#youth_choir{ padding: 3%; background-color: #F1F1F1;
+  position: relative;
+}
+#youth_choir h2{
+  font-size: 30px;
+  color: #4c4c4c;
+  text-align: center;
+  padding: 70px 0 30px;
+  letter-spacing: 0.7px;
+}
+#youth_choir .photo{
+  background: url('../img/youthChoir_m.png') no-repeat center center; 
+  background-size: cover;
+  padding-top: 65%;
+  text-indent: -9999px;
+}
+#youth_choir .verse{
+  margin-right: 3%;
+  width: 62%;
+  background-color: #FCF5D2;
+  border-radius: 0 0 0px 50px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+#youth_choir .verse p{
+  font-size: 16px;
+  color: #4d4d4d;
+  text-align: center;
+  padding: 20px 11px 8px;
+  line-height: 22px;
+}
+#youth_choir .verse p:last-child{
+  padding-top: 10px;
+}
+#youth_choir .verse span{
+  display: block;
+  border: 1px solid #B7A08B;
+  width: 110px;
+  margin: 0 auto;
+}
+#youth_choir .guide{
+  width: 55%;
+  height: 90px;
+  background-color: #D8DA75;
+  border-radius: 0 50px 50px 0px;
+  margin-top: 77px;
+  position: relative;
+}
+#youth_choir .guide span{
+  display: block;
+  height: 14px;
+  border: 4px solid #777949;
+  position: absolute;
+  top: 52px;
+  left: 15px;
+}
+#youth_choir .guide p{
+  font-size: 24px;
+  color: #fff;
+  padding: 50px 0 0 32px;
+}
+#youth_choir .description{
+  width: 90%;
+  padding: 20px 0 0 20px;
+  font-size: 15px;
+  color: #565656;
+  line-height: 1.4em;
+  font-family: Pretendard-Regular;
+}
+#youth_choir table{
+  width: 100%; margin: 30px 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #474747;
+}
+#youth_choir table tr{
+  line-height: 35px;
+}
+#youth_choir table th{
+  background-color: #D8DA75;
+  padding: 0 0.8em;
+  color: #fff;
+}
+#youth_choir table tr .name{
+  font-weight: bold;
+  text-align: center;
+  padding: 0;}
+
+#youth_choir table {border-top: 1px solid #aaa;border-bottom: 2px solid #CCC;}
+#youth_choir table td {text-indent: 0.8em;}
+#youth_choir table tr {border-bottom: 1px solid #ccc;}
+#youth_choir table tr:last-child {border: none;}
+
+/* ----- youth_choir end ----- */
+/* ----- edit start ----- */
+
+#edit{ padding: 3%; background-color: #E8EDDB;
+  position: relative;
+}
+#edit h2{
+  font-size: 30px;
+  color: #4c4c4c;
+  text-align: center;
+  padding: 70px 0 30px;
+  letter-spacing: 0.7px;
+}
+#edit .photo{
+  background: url('../img/edit.jpg') no-repeat center center; 
+  background-size: cover;
+  padding-top: 65%;
+  text-indent: -9999px;
+  border: 2px solid #fff;
+}
+#edit .verse{
+  margin-right: 3%;
+  width: 62%;
+  background-color: #D5E4BC;
+  border-radius: 0 0 0px 50px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+#edit .verse p{
+  font-size: 16px;
+  color: #4d4d4d;
+  text-align: center;
+  padding: 20px 11px 8px;
+  line-height: 22px;
+}
+#edit .verse p:last-child{
+  padding-top: 10px;
+}
+#edit .verse span{
+  display: block;
+  border: 1px solid #B8B8B8;
+  width: 110px;
+  margin: 0 auto;
+}
+#edit .guide{
+  width: 70%;
+  height: 90px;
+  background-color: #B3CB96;
+  border-radius: 0 50px 50px 0px;
+  margin-top: 77px;
+  position: relative;
+}
+#edit .guide span{
+  display: block;
+  height: 15px;
+  border: 4px solid #309202;
+  position: absolute;
+  top: 52px;
+  left: 15px;
+}
+#edit .guide p{
+  font-size: 22px;
+  color: #fff;
+  padding: 50px 0 0 32px;
+}
+#edit .description{
+  width: 90%;
+  padding: 20px 0 0 20px;
+  font-size: 16px;
+  color: #0b4600;
+  line-height: 1.4em;
+  font-family: Pretendard-Regular;
+}
+#edit table{
+  width: 100%; margin: 30px 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #474747;
+}
+#edit table tr{
+  line-height: 35px;
+  width: 40%;
+}
+#edit table th{
+  background-color: #B3CB96;
+  padding: 0 0.8em;
+  color: #fff;
+}
+#edit table tr .name{
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+}
+#edit table {border-top: 1px solid #aaa;border-bottom: 2px solid #CCC;}
+#edit table td {padding: 0 120px 0 30px;}
+#edit table tr {border-bottom: 1px solid #ccc;}
+#edit table tr:last-child {border: none;}
+
+/* ---/ edit end/--- */
+/* --- elder start --- */
+#elder p{
+  font-size: 30px;
+  padding: 90px 0;
+  text-align: center;
+}
+/* ---/ elder end/--- */
+
+/* --- out_story start --- */
+#ourStory p{
+  font-size: 30px;
+  padding: 90px 0;
+  text-align: center;
+}
+/* ---/ our_story end/--- */
+
+/* --- out_story start --- */
+#suggestions p{
+  font-size: 30px;
+  padding: 90px 0;
+  text-align: center;
+}
+/* ---/ our_story end/--- */
+
+/* --------- mediaquery ----------- */
+@media screen and (min-width:365px) and (max-width:412px){
+    .nav_list>ul {gap: 25px; margin: 0px 40px;}
+    .main_nav .nav_list>ul>li img{width: 64px; height: 64px;}
+    .main_nav .nav_list>ul>li>span {font-size: 14px; text-align: center; padding-top: 10px;}
+    main .greeting div p{font-size: 14px;}
+    main .notice .ad p{ font-size: 18px;}
+
+    #news h2>span{font-size:36px}
+
+    #middlehigh .guide span img {
+      display:block; position:absolute;
+      top:-13px; right:10px; width:40%;} 
+    #middlehigh .guide .box_left p{font-size:16px;}
+    #middlehigh .guide .box_left p:nth-of-type(1)::before {
+      padding: 0 10px 0 0; width:14px; height:14px;}
+    #middlehigh .guide .box_left p:nth-of-type(2)::before {
+      padding: 0 10px 0 0; width:14px; height:14px;}
+    #middlehigh .guide .box_left p:nth-of-type(3)::before {
+      padding: 0 10px 0 0; width:14px; height:14px;}
+    #middlehigh .album a img{position: absolute;top: 44px;left: 26px;width: 85%;}
+    
+    #sunschool .guide span img {
+      display:block; position:absolute;
+      top:-13px; right:10px; width:40%;} 
+    #sunschool .guide .box_left p{font-size:16px;}
+    #sunschool .guide .box_left p:nth-of-type(1)::before {
+      padding: 0 10px 0 0; width:14px; height:14px;}
+    #sunschool .guide .box_left p:nth-of-type(2)::before {
+      padding: 0 10px 0 0; width:14px; height:14px;}
+    #sunschool .guide .box_left p:nth-of-type(3)::before {
+      padding: 0 10px 0 0; width:14px; height:14px;}
+    #sunschool .guide .box_right p{font-size:16px;}
+    #sunschool .table table {font-size: 16px;}
+    #sunschool .album a img{position: absolute;top: 39px;left: 25px;width: 85%;}
+
+    #worship_team .verse p{font-size: 14px;}
+    #worship_team .guide {width: 50%;}
+    #worship_team table tr {font-size: 15px;}
+
+    #shekinah .verse p {font-size: 14px;}
+    #shekinah .guide {width: 60%;}
+    #shekinah table tr {font-size: 16px;}
+
+    #glory .verse p{font-size: 14px;}
+    #glory .guide {width: 63%;}
+    #glory table tr {font-size: 15px;}
+
+    #gloria .verse p{font-size: 14px;}
+    #gloria .guide {width: 63%;}
+    #gloria table tr {font-size: 15px;}
+
+    #youth_choir .verse p{font-size: 14px;}
+    #youth_choir .guide {width: 73%;}
+    #youth_choir table tr {font-size: 15px;}
+
+    #edit .verse p{font-size: 14px;}
+    #edit .guide {width: 73%;}
+    #edit table tr {font-size: 15px;}
+
+    #pastor h2>span{font-size:18px; line-height:30px;}
+
+    #servants h2 {top: -50px; font-size: 30px;}
+
+    #youth>div>h2 {font-size: 36px;}
+    #youth>div .break_line br{display: none;}
+    
+    #youth>div>p {width: 80%; font-size: 13px;top: 61%;
+      letter-spacing: 0.3px; margin: 0 auto; left: 35px;}
+
+    .sitemap .accordion_wrap li .sub {
+      line-height: 2.5rem;
+      padding: 15px 0 15px 40px;
+      font-size: 18px;}
+
+    #mapping .address .sec{
+      padding-left:14px; font-size:14px;}
+}
+
+/* slick mediaquery */
+@media screen and (min-width:390px) and (max-width:418px){
+  .gallery{height: 50vh;}
+}
+@media screen and (min-width:376px) and (max-width:390px){
+  .gallery{height: 49vh;}
+}
+@media screen and (min-width:360px) and (max-width:377px){
+  .gallery{height: 48vh;}
+}
+@media screen and (min-width:319px) and (max-width:359px){
+  .gallery{height: 43vh;} 
+}
+
+
+@media screen and (min-width:319px) and (max-width:365px){
+    .slide_container>.swiper>.swiper-wrapper>.swiper-slide>h2{font-size: 2.5em;}
+    .slide_container>.swiper>.swiper-wrapper>.swiper-slide>p{font-size:16px;}
+
+    #news h2>span{font-size:32px}
+    .main_nav>.motto>img {width:84%; margin-top:35px;}
+    .main_nav .nav_list>ul>li img {
+      width: 70px;height: 70px;}
+    main .greeting div p{font-size: 12px; line-height:22px; letter-spacing:0.5px;}
+    main .notice .ad p{ font-size: 16px;}
+
+    #news h2>span{font-size:30px}    
+    #news>form>#select{ width:60px;}
+    #news>form>#searchbox{ width:140px;}
+    #news>form>button{ width:60px;}
+
+    #middlehigh .guide h2 {margin: 70px 0 11px 25px;}
+    #middlehigh .guide span img {
+      top: 0px; right:10px; width: 40%;} 
+    #middlehigh .guide .box_left p{font-size:14px;}
+    #middlehigh .guide .box_left p .line {font-size:16px;}
+    #middlehigh .guide .box_left p:nth-of-type(1)::before {
+      padding: 0 10px 0 0; width:10px; height:10px;}
+    #middlehigh .guide .box_left p:nth-of-type(2)::before {
+      padding: 0 10px 0 0; width: 10px; height:10px}
+    #middlehigh .guide .box_left p:nth-of-type(3)::before {
+      padding: 0 10px 0 0;width:10px; height:10px;}
+    #middlehigh .guide .box_right p {font-size:18px;}
+    #middlehigh .guide .box_right p:last-child {font-size:14px}  
+    #middlehigh .table table>tbody>.verti>th{writing-mode: vertical-lr;}
+    #middlehigh .table table .verti>td {writing-mode: vertical-lr;}
+    #middlehigh .album a img{position: absolute;
+      top: 44px;left: 26px;width: 85%;}
+
+    #sunschool .guide h2 {margin: 70px 0 11px 25px;}
+    #sunschool .guide span img {
+      top: 0px; right:10px; width: 40%;} 
+    #sunschool .guide .box_left p{font-size:14px;}
+    #sunschool .guide .box_left p .line {font-size:16px;}
+    #sunschool .guide .box_left p:nth-of-type(1)::before {padding: 0 10px 0 0; width:10px; height:10px;}
+    #sunschool .guide .box_left p:nth-of-type(2)::before {padding: 0 10px 0 0; width: 10px; height:10px}
+    #sunschool .guide .box_left p:nth-of-type(3)::before {padding: 0 10px 0 0;width:10px; height:10px;}
+    #sunschool .guide .box_right p {font-size:18px;}
+    #sunschool .guide .box_right p:last-child {font-size:14px} 
+    #sunschool .table table {font-size: 16px;} 
+    #sunschool .table table>tbody>.verti>th{writing-mode: vertical-lr;}
+    #sunschool .table table .verti>td {writing-mode: vertical-lr;}
+    #sunschool .table table>tbody>.member>td{font-size: 14px; padding: 15px 10px;}
+    #sunschool .album a img{position: absolute;
+      top:33px;left:22px; width:85%;} 
+
+    #worship_team .verse {width: 70%;}
+    #worship_team .verse p{font-size: 14px;}
+    #worship_team .guide {width: 57%;}
+    #worship_team table tr {font-size: 15px;}
+    #worship_team table th{padding: 0 0.3em;}
+
+    #shekinah .verse{width: 70%;}
+    #shekinah .verse p {font-size: 14px; line-height: 20px;}
+    #shekinah .guide {width: 67%;}
+    #shekinah table tr {font-size: 15px;}
+    #shekinah table th{ padding: 0 0.3em;}
+
+    #glory .verse{width: 70%;}
+    #glory .verse p {font-size: 14px; line-height: 20px;}
+    #glory .guide {width: 67%;}
+    #glory table tr {font-size: 15px;}
+    #glory table th{ padding: 0 0.3em;}
+
+    #gloria .verse{width: 70%;}
+    #gloria .verse p {font-size: 14px; line-height: 20px;}
+    #gloria .guide {width: 67%;}
+    #gloria table tr {font-size: 15px;}
+    #gloria table th{ padding: 0 0.3em;}
+
+    #youth_choir .verse{width: 70%;}
+    #youth_choir .verse p {font-size: 14px; line-height: 20px;}
+    #youth_choir .guide {width: 84%;}
+    #youth_choir table tr {font-size: 15px;}
+    #youth_choir table th{ padding: 0 0.3em;}
+    
+    #edit .verse{width: 70%;}
+    #edit .verse p {font-size: 14px; line-height: 20px;}
+    #edit .guide {width: 84%;}
+    #edit table tr {font-size: 15px;}
+    #edit table th{ padding: 0 0.3em;}
+
+    #offering .guide>p{ text-align:start; padding:0 25px 25px 25px;}
+    #offering .guide>.break_line br{ display: none;}
+
+    #pastor h2>span{font-size:18px; line-height:30px;}
+
+    #servants .bg .motto {font-size: 14px;}
+    #servants .bg h1 {top: 162px; font-size: 17px;line-height: 22px;}
+    #servants h2 {top: -36px; font-size: 30px;}
+    #servants .servant .top .title {font-size: 22px;}
+
+    #mapping .top{margin-top: 20px;}
+    #mapping div h1 {width: 30%;}
+    #mapping div p {font-size: 29px;}
+    #mapping .address .sec{
+      padding-left:14px; font-size:14px;}
+    #mapping .address .sec>span{display: none;}
+  }
+/* 공통되는 요소 가운데 다른 한 tag 바꿀 때 selector를 자손으로 연결하면 용이! */
+/* #news .head form { background: #000;}
+#news .body form { background: #000;}
+#offering form {background: gray;}
+
+/* news 파일
+ #news .notice h3 {text-align: left;} 
+ #offering
+ #offering h3 {text-align: center;}*/
+
+/* .index table {border-top: 1px solid #000;}
+.sub table {border-top: 1px solid #000;}  */

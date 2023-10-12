@@ -1,0 +1,268 @@
+@charset "utf-8"; 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400; font-style: normal;}
+
+/* ------------------ common --------------------*/
+body, header, footer, main, nav, aside, section, article, p, address, div, h1, h2, h3, h4, h5, h6, form, fieldset, legend, table, tbody, th, td, ol, ul, li, dl, dt, dd, input, button, select, option, textarea, figure, figcaption, caption, blockquote{ margin:0; padding:0; }
+body{ background: #eee; font-family: "Nanum Gothic", 'Noto Sans KR', sans-serif; font-size: 16px; overflow-x: hidden; /* width: 100vw; */}
+ol, ul{ list-style: none;}
+img{ display: block; border: 0px; }
+a{ text-decoration: none; }
+address, em, i{ font-style:normal; }
+button, fieldset, select, input{ border: 0px; }
+legend, caption, hr{ display:none; }
+table{ border-collapse: collapse; border-spacing: 0px;}
+
+.sr-only{
+  position:absolute;  width:0; height:0; left:0;  top:0;
+  overflow: hidden;  font-size:0;  line-height:0;  visibility: hidden;
+}
+/* html{overflow-x: hidden} */
+
+header{ 
+  width: 100%; height:80px;
+  background:rgba(214, 214, 214, 0.3);  
+  position:fixed;  left:0;  top:0;  z-index:99999;   
+}
+header>.innerbox{
+  width: 100%; max-width:1140px; 
+  height: 80px; 
+  padding:0px 30px; 
+  box-sizing: border-box;
+  display:flex;  
+  justify-content: space-between;  align-items: center; 
+}
+header>.innerbox>h1{  
+  width:45px; height:45px;  
+}
+header>.innerbox>h1 img{  
+  width:100%; height:auto;  
+}
+header .innerbox .toggle{ 
+  width: 45px; height: 45px; border:0px; 
+  background-color: #FEC52C; 
+  border-radius: 50%;
+  display: flex; flex-direction: column; 
+  justify-content: center; align-items: center; gap:5px;
+  position: relative;
+  /* z-index: 10; */
+}
+header .innerbox .toggle span{ 
+  display:block; width: 22px; height: 3px; 
+  background-color: #fff;
+}
+/* header end */
+/*----- gnb(mobile) 시작 -----*/
+#header .innerbox #gnb{ 
+  position:absolute; 
+  width: 70vw; height: 100vh; 
+  right: -70vw; top:0; bottom: 0; 
+  background: #ececec;
+  box-sizing: border-box;
+  padding: 0px 0 20px;
+  /* z-index: 100; */
+}
+/*임시로*/
+#header .gnb_bg{
+  position: absolute;
+  width: 30vw; height: 100vh; 
+  background: rgba(0,0,0,0.5);
+  top:0; left:-30vw;
+  /* z-index: 50; */
+}
+/**/
+.innerbox #gnb .sitemap{
+  width:100%; height: 100%;
+}
+.innerbox #gnb .sitemap button{
+  width: 100%;
+  height: 80px;
+  background-color: #3a3a3a;
+  position: relative;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.innerbox #gnb .sitemap button .left{
+  position:absolute;
+  font-size:18px;
+  padding-bottom:20px;
+  top:31px; 
+  right:67px;
+}
+.innerbox #gnb .sitemap button .right{
+  font-size: 60px;
+  padding-right: 25px;  
+}
+/* ----------- accordion ------------- */
+.sitemap .accordion_wrap{  
+  background-color: #ececec;
+  font-size: 22px; font-weight: bold;
+} 
+.sitemap .accordion_wrap li .entry{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 35px 25px 15px;
+  border-bottom: 1px solid #cacaca;
+}
+.sitemap .accordion_wrap li .entry p{
+  line-height: 40px;
+  padding-left: 20px;
+  font-weight: bold;
+  color:#090909;
+  font-size: 22px;
+}
+.sitemap .accordion_wrap li .entry .switch{
+  background: url('../icons/plus_small.png') no-repeat center center;
+  width: 20px; height: 20px;
+  display: block;
+}
+.sitemap .accordion_wrap li .entry.on .switch{
+  background-image: url('../icons/minus.png');
+}
+.sitemap .accordion_wrap li .sub{
+    background: #dedede;
+    line-height: 2.8rem;
+    padding: 15px 0 15px 40px;
+    font-size: 20px;
+}
+.sitemap .accordion_wrap li .sub li{
+  padding: 5px 0;
+}
+.sitemap .accordion_wrap li .sub a{
+  color: #5b5b5b;
+}
+/* +++++ gnb 종료 ++++++*/
+/* -------- footer(mobile) 시작 ------*/
+.main_footer{ 
+  display: flex; 
+  flex-direction: column; justify-content: center; 
+  align-items: center;
+  width: 100%; height: 281px; 
+  background: #474747;
+  position: relative; 
+  /* margin-top: 30px; */
+}
+.main_footer .innerbox{
+  width: 90%; border:1px solid #ececec;
+  padding:25px 0 15px 0;
+}
+.main_footer address{   
+  margin-bottom:10px;
+  /* 알아서 수정 */
+}
+.main_footer p:first-of-type{
+  font-size: 14px; font-weight: normal;
+  color:#ececec; text-align: center;
+  letter-spacing: 0.5px;
+  /* padding-top: 25px; */
+  line-height: 20px;  
+}
+.main_footer p:first-of-type span{
+  font-size: 22px; 
+  font-weight: bold; color:#ececec;
+}
+.main_footer address p:first-of-type{
+  font-size: 14px; font-weight: normal; 
+  color:#ececec; text-align: center;
+  padding-top: 14px;
+  line-height: 20px;
+}
+.main_footer address p:last-child{
+  font-size: 11px; font-weight: normal; 
+  color:#d4d4d4; text-align: center;
+  letter-spacing: 0.5px;
+  padding-top: 10px;
+}
+.main_footer .sns{ 
+  margin: 20px auto 10px;
+}
+.main_footer .sns ul{
+  display: flex; justify-content: center; align-items:center; gap:10px; 
+  /* margin-top: 175px; */
+} 
+.main_footer .warning{
+  display: flex; justify-content: center; align-items: center; gap:4px;
+}
+.main_footer .warning span{
+  background: url('../icons/line_vertical.png') no-repeat center center;
+  width: 12px; height: 12px;
+}
+.main_footer .warning a{
+  font-size: 11px; font-weight: normal; color:#d4d4d4; 
+} 
+/* --// footer(mobile) 종료 //-- */
+
+/* --- default --- */
+main{padding: 3%;}
+main h2{
+  width: 60vw; height: 9vh;
+  background-color: #ffb54e; 
+  margin: 70px auto 20px;
+  display: flex; 
+  justify-content: center; align-items: center;
+}
+main h2>span{ 
+font-size: 32px; color:#ffffff; 
+}
+main>form{ 
+width: 100%; padding-top: 40px;
+border-bottom: 2px solid #333;
+padding-bottom: 10px;
+}
+main>form>#select{ 
+width:70px; height: 30px;
+padding-left: 7px;
+letter-spacing: 1px;
+}
+main>form>#searchbox{ 
+width:170px; height: 30px;
+padding-left: 7px;
+letter-spacing: 1px;
+margin-left: 7px;
+}
+main>form>button{ 
+width:70px; height: 30px;
+text-align: center;
+font-weight: bold;
+letter-spacing: 1px;
+margin-left: 7px;
+background-color: #aeaeae;
+}
+/* --// form end --// */
+main>section article h3{
+  padding: 10px 0 10px 15px;
+  margin: 10px auto;
+  text-align: center;
+}
+main>section article h3 span{
+  font-size: 16px; font-weight: 400;
+  padding-left: 7px;
+}
+main>section article img{  
+  display: flex; 
+  justify-content: center; align-items: center;
+  width: 90%;
+  margin: 5px auto;
+}
+main>section article figcaption{
+  font-size: 14px;
+  text-align: right;
+  width: 90%;
+  padding-bottom: 10px;
+}
+/* ---// default end //--- */
+
+@media screen and (min-width:300px) and (max-width:366px){
+main>form>#select{width:60px;}
+  main>form>#searchbox{ 
+  width:140px;}
+  main>form>button{width:60px;}
+}
+
